@@ -18,9 +18,17 @@ function [plantobj_array] = img_finder(img_directory, dest_directory)
     subFolders = files(dirFlags);
     subFolders = subFolders(3:end);
     
+    if ispc  % is the computer running the application pc?
+        c = '\';
+    elseif isunix % is the computer unix based?
+        c = '/';
+    else
+        c = '/';
+    end
+    
     if ~isempty(subFolders)
         for k = 1 : length(subFolders)
-            img_array = img_array_func(strcat(img_directory, '\', subFolders(k).name));
+            img_array = img_array_func(strcat(img_directory, c, subFolders(k).name));
             filename = strcat('\', subFolders(k).name);
             p = plant_obj(filename, img_array, dest_directory);
             plantobj_array = [plantobj_array, p];

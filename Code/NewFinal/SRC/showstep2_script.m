@@ -1,4 +1,4 @@
-%showstep2_script.m
+%   showstep2_script.m
 %   This script shows the objects from step 2, as well as displaying the
 %   initial frame
 

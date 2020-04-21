@@ -2,6 +2,8 @@ function [ img_array ] = img_array_func(img_directory )
 %img_array_func.m
 %This function loads all .jpg images from a folder into an array
 
+%Comment to test Git
+%This change will be pushed to the master.
 
 img_array = [];
 if ispc  % is the computer running the application pc?
