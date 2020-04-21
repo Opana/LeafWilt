@@ -12,12 +12,9 @@ else
     c = '/';
 end
 
-disp(img_directory)
-
 if img_directory ~= 0
     img_files = dir(fullfile(img_directory,'*.jpg'));
     [~, idx] = sort([img_files.datenum]); % create index based on the date created
-    disp(numel(img_files))
     idx = [1:1:numel(img_files)];  % use default sort
     imgs_num = numel(idx);
 

@@ -4,7 +4,7 @@
 %total number of plots is defined by the number of leaves under
 plant_obj = handles.plant_obj_array(handles.plant_num);
 num_plots = numel(plant_obj.rect_array);
-framecount = round(plant_obj.initialframe_num):30:round(plant_obj.finalframe_num);
+framecount = round(plant_obj.initialframe_num):1:round(plant_obj.finalframe_num);
 s = 10; % size of the points in scatterplot
 
 % plot wilt angle data for each of the leaves under investigation
@@ -12,7 +12,7 @@ figure;
 for k = 1:num_plots
     angle_data = plant_obj.angle_data(k,:);
     % plot every 30th data point
-    new_angle_data = angle_data(1:30:end);
+    new_angle_data = angle_data(1:1:end);
     subplot(ceil(sqrt(num_plots)),ceil(sqrt(num_plots)),k);
     scatter( framecount, new_angle_data, s, 'MarkerEdgeColor','k','MarkerFaceColor','k');
     % Label plot

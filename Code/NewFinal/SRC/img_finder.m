@@ -12,7 +12,6 @@ function [plantobj_array] = img_finder(img_directory, dest_directory)
         p = plant_obj(filename, img_array, dest_directory);        
         plantobj_array = [plantobj_array, p];
     end 
-    
     files = dir(img_directory);
     dirFlags = [files.isdir];
     subFolders = files(dirFlags);
@@ -29,7 +28,7 @@ function [plantobj_array] = img_finder(img_directory, dest_directory)
     if ~isempty(subFolders)
         for k = 1 : length(subFolders)
             img_array = img_array_func(strcat(img_directory, c, subFolders(k).name));
-            filename = strcat('\', subFolders(k).name);
+            filename = strcat(c, subFolders(k).name);
             p = plant_obj(filename, img_array, dest_directory);
             plantobj_array = [plantobj_array, p];
         end
